@@ -1,0 +1,269 @@
+ 
+/* //SESSÃO DA INTRODUÇÃO DA LANDING PAGE */
+@media (max-width: 768px) {
+  #intro-screen { flex-direction: column; }
+  .intro-left {
+    width: 100%;
+    min-height: 40vh;
+    padding: 0;
+  }
+  .intro-left-inner {
+    height: 40vh;
+    padding: 0;
+    width: 100%;
+  }
+  .intro-logo-full {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .intro-right {
+    padding: 40px 24px 60px;
+    align-items: center;
+    text-align: center;
+  }
+  .intro-features { justify-content: center; }
+  .intro-warning { justify-content: center; }
+  .intro-right::after { display: none; }
+
+  /* whatsapp */
+  .wa-sidebar { display: none; }
+    .demo-topbar-text {
+    display: block;
+    font-size: 10px;
+  }
+  .btn-toggle-view { display: none; }
+  .messages-area { padding: 12px 4%; }
+  .msg-wrap { max-width: 80%; }
+  .section-cards { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .intro-title { font-size: 24px; }
+  .feat-pill { font-size: 12px; }
+} 
+
+/* //HEADER E BARRA DE PROGRESSO */
+/* ============================================================
+   RESPONSIVE — MOBILE
+   ============================================================ */
+@media (max-width: 768px) {
+  #site-header { padding: 0 16px; }
+
+  .header-toggle { display: flex; }
+  .header-nav    { display: none; }
+
+  .atlas-side-nav { display: none; }
+
+  #progress-bar { display: block; }
+}
+
+@media (min-width: 769px) {
+  #progress-bar { display: none; }
+}
+
+
+
+/* ============================================================
+   PRATICA — RESPONSIVE MOBILE
+   ============================================================ */
+@media (max-width: 768px) {
+  .pratica-slide {
+    height: auto;
+    min-height: 100vh;
+    padding: 60px 20px;
+    position: relative; /* desativa sticky no mobile */
+  }
+
+  .pratica-inner,
+  .pratica-inner-reverse {
+    flex-direction: column;
+    gap: 32px;
+    width: 100%;
+    max-width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .pratica-phone-wrap {
+    width: 100%;
+    max-width: 280px;
+    flex-shrink: 0;
+  }
+
+  .pratica-phone {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+  }
+
+  .pratica-text {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .pratica-step {
+    display: block;
+    margin: 0 auto 8px;
+  }
+}
+
+/* //SESSÃO OBJETIVO */
+@media (max-width: 768px) {
+    .section-objetivo {
+    height: auto;
+    flex-direction: column;
+  }
+
+  .objetivo-left {
+     width: 100%;
+    height: 40vh;
+  }
+
+  .objetivo-divider {
+    width: 80%;
+    height: 1px;
+    align-self: center;
+    background: linear-gradient(to right, transparent, rgba(255,255,255,0.08), transparent);
+  }
+
+  .objetivo-right {
+    padding: 40px 24px 50px;
+  }
+
+  .objetivo-badge { align-self: center; }
+  .objetivo-title { text-align: center; font-size: 28px; }
+  .objetivo-desc { text-align: center; max-width: 100%; }
+}
+
+
+/* //CHAT DO WHATSAPP - BARRA STRIP ESQUERDA E SIDEBARS */
+@media (max-width: 768px) {
+
+  /* Wrapper vira coluna: sidebar em cima, nav-strip embaixo */
+  .wa-wrapper {
+    flex-direction: column;
+  }
+
+  /* Nav strip vira bottom bar */
+  .wa-nav-strip {
+    display: flex !important;
+    flex-direction: row;
+    width: 100%;
+    min-width: unset;
+    height: 56px;
+    order: 3;
+    border-right: none;
+    border-top: 1px solid var(--wp-border);
+    padding: 0 8px;
+    justify-content: space-around;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .wa-nav-icons {
+    flex-direction: row;
+    gap: 0;
+    flex: 1;
+    justify-content: space-around;
+    padding: 0;
+  }
+
+  .wa-nav-bottom {
+    flex-direction: row;
+  }
+
+  /* Sidebar ocupa toda a tela quando visível */
+  .wa-sidebar {
+    display: flex !important;
+    width: 100%;
+    min-width: unset;
+    order: 1;
+    flex: 1;
+    border-right: none;
+  }
+
+  /* Chat fica escondido por padrão no mobile */
+  .wa-chat {
+    position: fixed;
+    inset: 0;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 200;
+  }
+
+  /* Chat visível quando ativo */
+  .wa-chat.mobile-active {
+    transform: translateX(0);
+  }
+
+  /* Botão back no chat-header — só aparece no mobile real */
+  .chat-back-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    color: var(--wp-text);
+    cursor: pointer;
+    padding: 4px;
+    margin-right: 4px;
+    flex-shrink: 0;
+  }
+
+   .btn-back { display: flex; }
+
+  .demo-topbar {
+    min-height: 40px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    z-index: 500;
+  }
+  /* Wrapper precisa de padding-top pra não sobrepor a topbar */
+  #app {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .demo-topbar {
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    z-index: 500;
+  }
+
+  .wa-wrapper {
+    flex: 1;
+    overflow: hidden;
+    min-height: 0;
+  }
+
+  .demo-topbar {
+    flex-shrink: 0;
+    z-index: 400;
+    position: relative;
+  }
+
+  .wa-chat {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 450;
+  }
+
+  .wa-chat.mobile-active {
+    transform: translateX(0);
+    z-index: 450;
+  }
+
+}
+
+/* No desktop, esconde o botão back do chat */
+@media (min-width: 769px) {
+  .chat-back-btn { display: none; }
+}

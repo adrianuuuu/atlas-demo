@@ -1,0 +1,96 @@
+/* ============================================================
+   ATLAS DEMO — style.css
+   ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --wp-dark: #0a1014;
+  --wp-sidebar: #111b21;
+  --wp-chat-bg: #0b141a;
+  --wp-header: #202c33;
+  --wp-input: #2a3942;
+  --wp-msg-in: #202c33;
+  --wp-msg-out:#0f74c7;
+  --wp-text: #e9edef;
+  --wp-text-muted: #8696a0;
+  --wp-border: #2a3942;
+  --wp-accent: #0f74c7;
+  --wp-time: #8696a0;
+  --wp-tick: #53bdeb;
+  --intro-bg: #060d14;
+  --intro-accent: #0f74c7;
+  --intro-text: #e9edef;
+  --intro-muted: #8696a0;
+  --font-main: 'DM Sans', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+  --section-bg: #080f17;
+  --wpMain-accent: #0c9148;
+  --objetivo-bg: #01060a;
+}
+
+/* ============================================================
+   ESCONDER HEADER / SIDEBAR / BOLINHAS quando o app está aberto
+   ============================================================ */
+body.app-open #site-header,
+body.app-open .atlas-sidebar,
+body.app-open .atlas-overlay,
+body.app-open .atlas-side-nav,
+body.app-open #progress-bar {
+  display: none !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-main);
+  background: var(--intro-bg);
+  color: var(--intro-text);
+}
+
+html {
+  overflow-x: hidden;
+}
+
+
+/* SCROLLBAR */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 2px; }
+
+/* ============================================================
+   REVEAL ANIMATIONS
+   ============================================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.reveal.show { opacity: 1; transform: translateY(0); }
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.reveal-left.show { opacity: 1; transform: translateX(0); }
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.reveal-right.show { opacity: 1; transform: translateX(0); }
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+.fade-up.show { opacity: 1; transform: translateY(0); }

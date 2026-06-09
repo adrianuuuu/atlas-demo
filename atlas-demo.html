@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ATLAS — Demo Interativo</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/landingPage.css">
+<link rel="stylesheet" href="./css/whatsApp.css">
+<link rel="stylesheet" href="./css/responsividade.css">
+
+</head>
+<body>
+  <div id="fade-overlay"></div>
+
+  <!-- PROGRESS BAR MOBILE -->
+<div id="progress-bar"></div>
+
+<!-- HEADER -->
+<header id="site-header">
+  <div class="header-toggle" id="header-toggle">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <nav class="header-nav">
+    <a href="#intro-screen">Início</a>
+    <a href="#section-1">Como funciona</a>
+    <a href="#pratica">Na prática</a>
+    <a href="#section-objetivo">Objetivo</a>
+  </nav>
+
+  <div class="header-social">
+    <a href="https://www.linkedin.com/in/adriano-mesquita-da-silva-b30151209/" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://github.com/adrianuuuu" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="https://api.whatsapp.com/send/?phone=5585981379636" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  </div>
+</header>
+
+<!-- SIDEBAR MOBILE -->
+<aside class="atlas-sidebar" id="atlas-sidebar">
+  <nav class="sidebar-nav-links">
+    <a href="#intro-screen">Início</a>
+    <a href="#section-1">Como funciona</a>
+    <a href="#pratica">Na prática</a>
+    <a href="#section-objetivo">Objetivo</a>
+  </nav>
+  <div class="sidebar-social-links">
+    <a href="https://www.linkedin.com/in/adriano-mesquita-da-silva-b30151209/" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://github.com/adrianuuuu" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="https://api.whatsapp.com/send/?phone=5585981379636" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  </div>
+</aside>
+
+<!-- OVERLAY -->
+<div class="atlas-overlay" id="atlas-overlay"></div>
+
+<!-- =========== INTRO SCREEN =========== -->
+<div id="intro-screen">
+
+  <!-- ESQUERDA — Logo -->
+  <div class="intro-left reveal-left">
+    <div class="intro-left-inner">
+      <img src="assets/logoAtlas.png" alt="ATLAS Logo" class="intro-logo-full">
+    </div>
+  </div>
+
+  <!-- DIVISÓRIA -->
+  <!-- <div class="intro-divider"></div> -->
+
+  <!-- DIREITA — Conteúdo -->
+  <div class="intro-right reveal">
+    <h1 class="intro-title">Conheça o <span>ATLAS</span></h1>
+    <p class="intro-sub">Assistente de Tecnologia, Lógica e Atendimento de Suporte</p>
+    <p class="intro-desc">
+      O ATLAS é um agente de IA, que atua em setores de tecnologia — responsável por receber chamados, coletar dados e acompanhar o usuário durante todo o atendimento, tudo pelo WhatsApp. E esta versão DEMO conta com:
+    </p>
+    <div class="intro-features">
+      <div class="feat-pill"><div class="dot"></div>Mesmo prompt do ATLAS real</div>
+      <div class="feat-pill"><div class="dot"></div>Abre chamados fictícios</div>
+      <div class="feat-pill"><div class="dot"></div>Interface WhatsApp fiel</div>
+      <div class="feat-pill"><div class="dot"></div>Memória volátil</div>
+    </div>
+    <button class="btn-start" onclick="startDemo()">Simular conversa com o ATLAS</button>
+    <p class="intro-warning">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      Dados fictícios · Sem integração com sistemas reais · Memória resetada ao recarregar
+    </p>
+  </div>
+
+</div>
+
+<!-- =========== SECTION 1 — PARALLAX =========== -->
+<section class="section-parallax jarallax" id="section-1">
+  <div class="section-parallax-content reveal fade-up">
+    <h2 class="section-parallax-title">Como o <span>ATLAS</span> funciona</h2>
+    <p class="section-parallax-desc">
+      O ATLAS integra WhatsApp, IA e um sistema de gestão de chamados em um único fluxo automatizado — do primeiro contato até a resolução do problema.
+    </p>
+    <div class="section-cards">
+      <div class="section-card reveal-left">
+        <div class="section-card-icon">💬</div>
+        <h3>Atendimento via WhatsApp</h3>
+        <p>O usuário envia uma mensagem e o ATLAS responde em segundos, coletando nome, setor e a identificação do equipamento logo na primeira conversa. Após a coleta, o ATLAS solicita apenas a descrição do problema e mantém os dados do usuário salvos.</p>
+      </div>
+      <div class="section-card reveal-left" style="transition-delay:.15s">
+        <div class="section-card-icon">🤖</div>
+        <h3>IA com Contexto</h3>
+        <p>Agente integrado ao Gemini via OpenRouter, com memória de conversa persistente em PostgreSQL, onde ele mantém um padrão de busca das 20 ultimas interações no chat, para não perder o contexto da conversa e manter a linha de raciocínio intacta.</p>
+      </div>
+      <div class="section-card reveal-left" style="transition-delay:.3s">
+        <div class="section-card-icon">📋</div>
+        <h3>Abertura Automática de Chamados</h3>
+        <p>O ATLAS pode ser integrado em um sistema de gestão e é capaz de abrir o chamado automaticamente no sistema, executar ações e notificar equipe da abertura do novo chamado, enquanto mantém o usuário informado sobre seu andamento.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========== SECTION 2 — NA PRÁTICA =========== -->
+<div class="pratica-wrap" id="pratica">
+
+  <div class="pratica-slide" style="background-color:#054074; z-index:-1;">
+    <div class="pratica-inner">
+      <div class="pratica-phone-wrap">
+        <img src="assets/01.jpg" alt="Primeiro contato" class="pratica-phone">
+      </div>
+      <div class="pratica-text">
+        <span class="pratica-step">01</span>
+        <h3>Primeiro contato</h3>
+        <p>No primeiro contato, o ATLAS se apresenta e solicita o nome completo e o departamento do usuário — coletando os dados necessários antes de abrir qualquer chamado.</p><br>
+        <p>Além disso, o ATLAS solicita o número de tombamento do equipamento, para identificar o modelo e verificar se ele é de uso pessoal ou da empresa — o que influencia diretamente no fluxo de atendimento.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="pratica-slide" style="background-color:#080f17; z-index:-2;">
+    <div class="pratica-inner pratica-inner-reverse">
+      <div class="pratica-text">
+        <span class="pratica-step">02</span>
+        <h3>Abertura do chamado</h3>
+        <p>Com o problema identificado e o tombamento informado, o ATLAS salva os dados coletados em sua memória, consulta o inventário, abre o chamado automaticamente e confirma a abertura — com número de protocolo ou número de chamado gerado na hora.</p><br>
+        <p>Todo esse processo é feito em poucos segundos, sem que o usuário precise acessar outro sistema ou preencher formulários complexos — e o ATLAS já começa a acompanhar o chamado desde a abertura, mantendo o usuário informado sobre cada etapa do atendimento.</p>
+      </div>
+      <div class="pratica-phone-wrap">
+        <img src="assets/02.jpg" alt="Abertura de chamado" class="pratica-phone">
+      </div>
+    </div>
+  </div>
+
+  <div class="pratica-slide" style="background-color:#054074; z-index:-3;">
+    <div class="pratica-inner">
+      <div class="pratica-phone-wrap">
+        <img src="assets/03.jpg" alt="Triagem inteligente" class="pratica-phone">
+      </div>
+      <div class="pratica-text">
+        <span class="pratica-step">03</span>
+        <h3>Triagem inteligente</h3>
+        <p>Após a abertura de um chamado, o usuário pode relatar outro problema, como por exemplo, uma lentidão na internet.</p><br>
+        <p>Uma vez avaliado, o ATLAS identifica a natureza do problema e toma a decisão apropriada — seja abrindo um novo chamado, encaminhando o usuário para um procedimento específico e mais simples ou fornecendo orientações imediatas.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="pratica-slide" style="background-color:#0c151e; z-index:-4;">
+    <div class="pratica-inner pratica-inner-reverse">
+      <div class="pratica-text">
+        <span class="pratica-step">04</span>
+        <h3>Acompanhamento até o fim</h3>
+        <p>Nesse meio tempo, o ATLAS mantém o usuário informado sobre o progresso do chamado, com atualizações em tempo real e notificações sobre qualquer mudança no status do atendimento ou registro que a equipe técnica realizar.</p><br>
+        <p>Ao final do atendimento, o ATLAS confirma a resolução do problema e se despede cordialmente — garantindo uma experiência de suporte completa, eficiente e humanizada.</p>
+      </div>
+      <div class="pratica-phone-wrap">
+        <img src="assets/04.jpg" alt="Finalização do chamado" class="pratica-phone">
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- =========== SECTION 3 — OBJETIVO =========== -->
+<section class="section-objetivo" id="section-objetivo">
+
+  <!-- ESQUERDA — Imagem -->
+  <div class="objetivo-left reveal-left">
+    <img src="assets/tech-dashboard.png" alt="Sistema ATLAS em funcionamento" class="objetivo-img">
+  </div>
+
+  <!-- DIVISÓRIA -->
+  <!-- <div class="objetivo-divider"></div> -->
+
+  <!-- DIREITA — Conteúdo -->
+  <div class="objetivo-right">
+
+    <div class="objetivo-badge reveal fade-up">Por que o ATLAS foi criado</div>
+    <h2 class="objetivo-title reveal fade-up" style="transition-delay:.1s">
+      Mais agilidade.<br>Menos ruído.
+    </h2>
+    <p class="objetivo-desc reveal fade-up" style="transition-delay:.2s">
+      O ATLAS nasceu de uma necessidade real em um ambiente corporativo de TI — transformar um processo manual, fragmentado e lento em um fluxo automatizado, rastreável e eficiente.
+    </p>
+
+    <div class="objetivo-items reveal fade-up" style="transition-delay:.3s">
+
+      <div class="objetivo-item reveal-left" style="transition-delay:.2s">
+        <div class="objetivo-icon">⚡</div>
+        <div>
+          <h4>Abertura automatizada</h4>
+          <p>O usuário relata o problema e o ATLAS registra, classifica e abre o chamado automaticamente — sem depender de um técnico disponível no momento.</p>
+        </div>
+      </div>
+
+      <div class="objetivo-item reveal-left" style="transition-delay:.3s">
+        <div class="objetivo-icon">🔄</div>
+        <div>
+          <h4>Acompanhamento em tempo real</h4>
+          <p>O usuário é notificado a cada atualização do chamado, sem precisar ligar ou ir pessoalmente até a TI perguntar sobre o andamento.</p>
+        </div>
+      </div>
+
+      <div class="objetivo-item reveal-left" style="transition-delay:.4s">
+        <div class="objetivo-icon">📊</div>
+        <div>
+          <h4>Visibilidade para a equipe técnica</h4>
+          <p>Os técnicos recebem os chamados organizados por prioridade e tipo, com todas as informações necessárias para agir rapidamente.</p>
+        </div>
+      </div>
+      <button class="btn-start" onclick="startDemo()">Simular conversa com o ATLAS</button><br>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- SIDE NAV — bolinhas -->
+<nav class="atlas-side-nav" id="atlas-side-nav">
+  <button class="atlas-dot" data-target="#intro-screen"><span class="atlas-tooltip">Início</span></button>
+  <button class="atlas-dot" data-target="#section-1"><span class="atlas-tooltip">Como funciona</span></button>
+  <button class="atlas-dot" data-target="#pratica"><span class="atlas-tooltip">Na prática</span></button>
+  <button class="atlas-dot" data-target="#section-objetivo"><span class="atlas-tooltip">Objetivo</span></button>
+</nav>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-content">
+    <p class="footer-text">© 2026 ATLAS · Desenvolvido por Adriano Mesquita · Dev Full Stack</p>
+    <div class="footer-social">
+      <a href="https://www.linkedin.com/in/adriano-mesquita-da-silva-b30151209/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/adrianuuuu" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://api.whatsapp.com/send/?phone=5585981379636" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </div>
+</footer>
+
+<!-- =========== MAIN APP =========== -->
+<div id="app">
+  <div class="demo-topbar">
+    <span class="demo-topbar-text">O CHAT SERÁ RESETADO AO RECARREGAR OU VOLTAR A PÁGINA</span>
+    <div class="demo-topbar-actions">
+      <button class="btn-toggle-view" onclick="toggleView()" id="toggle-btn">
+        <svg class="toggle-icon" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        <span id="toggle-label">Modo Mobile</span>
+      </button>
+      <!-- <button class="btn-reset" onclick="resetChat()">↺ Reiniciar</button> -->
+      <button class="btn-back" onclick="voltarPagina()">← Voltar</button>
+
+    </div>
+  </div>
+
+  <div class="wa-wrapper reveal fade-up">
+    <!-- NAV STRIP LATERAL -->
+    <div class="wa-nav-strip">
+      <div class="wa-nav-icons">
+        <!-- Chats -->
+        <button class="wa-nav-btn active" title="Chats">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </button>
+        <!-- Status -->
+        <button class="wa-nav-btn" title="Status">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>
+        </button>
+        <!-- Comunidades -->
+        <button class="wa-nav-btn" title="Comunidades">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </button>
+        <!-- Arquivados -->
+        <button class="wa-nav-btn" title="Arquivados">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
+        </button>
+      </div>
+      <div class="wa-nav-bottom">
+        <!-- Configurações -->
+        <button class="wa-nav-btn" title="Configurações">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="wa-sidebar">
+     <div class="sidebar-header">
+        <span class="sidebar-title">WhatsApp</span>
+        <div class="sidebar-icons">
+          <!-- Nova conversa -->
+          <svg class="sidebar-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" title="Nova conversa"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+          <!-- Três pontos -->
+          <svg class="sidebar-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="5" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="12" cy="19" r="1"/></svg>
+        </div>
+      </div>
+      <div class="sidebar-search">
+        <div class="search-wrap">
+          <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input class="search-input" type="text" placeholder="Pesquisar ou começar uma nova conversa">
+        </div>
+      </div>
+      <div class="filter-tabs">
+        <button class="filter-tab active">Tudo</button>
+        <button class="filter-tab">Não lidas</button>
+        <button class="filter-tab">Favoritos</button>
+        <button class="filter-tab">Grupos</button>
+      </div>
+      <div class="chat-list">
+        <div class="chat-item">
+          <div class="chat-item-avatar"></div>
+          <div class="chat-item-info">
+            <div class="chat-item-name">ATLAS</div>
+            <div class="chat-item-preview" id="sidebar-preview">Disponível</div>
+          </div>
+          <div class="chat-item-meta">
+            <div class="chat-item-time" id="sidebar-time">agora</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wa-chat">
+      <div class="wa-chat-bg"></div>
+      <!-- <div class="chat-header">
+        <div class="chat-header-avatar"></div>
+        <div class="chat-header-info"> -->
+          <!-- DEPOIS -->
+      <div class="chat-header">
+        <button class="chat-back-btn" id="chat-back-btn" onclick="closeMobileChat()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <div class="chat-header-avatar"></div>
+        <div class="chat-header-info">
+
+          <div class="chat-header-name">ATLAS</div>
+          <div class="chat-header-status online" id="atlas-status">online</div>
+        </div>
+        <div class="chat-header-icons">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+        </div>
+      </div>
+      <div class="messages-area" id="messages-area">
+        <div class="date-divider">
+          <div class="date-divider-label" id="date-label">Hoje</div>
+        </div>
+      </div>
+      <div class="hint-bubble" id="hint-bubble">✦ Digite uma mensagem para iniciar</div>
+      <div class="chat-input-area">
+        <button class="input-btn" title="Emoji">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+        </button>
+        <button class="input-btn" title="Anexar">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+        </button>
+        <div class="input-box-wrap">
+          <textarea class="msg-input" id="msg-input" placeholder="Digite uma mensagem" rows="1"></textarea>
+        </div>
+        <button class="send-btn" id="send-btn" onclick="sendMessage()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<!--scripts -->
+<script src="./scripts/efeitos.js"></script>
+<script src="./scripts/funcoesLandingPage.js"></script>
+<script src="./scripts/funcoesWhatsApp.js"></script>
+</body>
+</html>
