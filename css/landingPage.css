@@ -619,7 +619,7 @@
 }
 
 .section-card {
-  background: rgba(255, 255, 255, 0.137);
+  background: rgb(21, 35, 43);
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: 16px;
   padding: 28px 24px;
@@ -638,15 +638,15 @@
 }
 
 .section-card h3 {
-  font-size: 17px;
+  font-size: 19px;
   font-weight: 600;
-  color: #e9edef;
+  color: #ffffff;
   margin-bottom: 10px;
 }
 
 .section-card p {
   font-size: 14px;
-  color: #eff3f5;
+  color: #ffffff;
   line-height: 1.6;
 }
 
