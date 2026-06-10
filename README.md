@@ -25,6 +25,7 @@ Gestão de usuários com controle de acesso por nível (admin / técnico)
 Arquivamento de chamados e equipamentos
 
 🤖 O Agente ATLAS
+
 O agente de IA é orquestrado via n8n com memória persistente em PostgreSQL. Ele:
 
 Recebe mensagens do WhatsApp via Evolution API
