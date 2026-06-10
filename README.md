@@ -104,12 +104,6 @@ O agente de IA é orquestrado via **n8n** com memória persistente em PostgreSQL
 
 ---
 
-## 📸 Screenshots
-
-> _Adicione capturas de tela do painel e do fluxo no WhatsApp aqui_
-
----
-
 ## 👨‍💻 Autor
 
 Desenvolvido por **Adriano Mesquita**
