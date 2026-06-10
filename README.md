@@ -13,6 +13,47 @@
 
 </div>
 
+## 🎮 ATLAS Demo
+
+Como o sistema roda em ambiente institucional com credenciais reais, foi criada uma **versão demo** hospedada no GitHub Pages para que recrutadores e outros devs possam interagir com o agente sem precisar de acesso ao ambiente de produção.
+
+> 🔗 **[Acessar Demo](https://adrianuuuu.github.io/atlas-demo)**
+
+### Como funciona a demo
+
+A demo é uma landing page interativa que simula o canal WhatsApp do ATLAS. Ao clicar em "Iniciar Demo", um chat estilizado no formato do WhatsApp é aberto e o visitante pode conversar diretamente com o agente de IA — que responde exatamente como faria em produção, incluindo coleta de dados e abertura de chamados fictícios.
+
+Diferenças em relação ao ambiente de produção:
+
+| | Produção | Demo |
+|---|---|---|
+| Canal | WhatsApp real (Evolution API) | Interface web simulada |
+| Dados | Chamados reais na SEINFRA | Dados fictícios, sem persistência |
+| Memória | PostgreSQL (persistente por usuário) | Simple Memory (volátil por sessão) |
+| Sessão | Identificada pelo número de telefone | `sessionId` gerado aleatoriamente no browser |
+| Backend | API REST completa no Render | Apenas webhook n8n público |
+
+### Estrutura do repositório da demo
+
+```
+atlas-demo/
+├── index.html          # Landing page completa (SPA)
+├── style.css           # Estilos globais, paleta, animações
+├── main.js             # Lógica da demo: chat, sessão, estado
+└── assets/
+    ├── logoAtlas.png
+    ├── iaBackground.jpg
+    ├── tech-dashboard.jpg
+    └── 01.jpg – 04.jpg
+```
+
+### Decisões técnicas da demo
+
+- **Sem framework** — HTML/CSS/JS vanilla puro, zero dependências, compatível com GitHub Pages
+- **`sessionId` volátil** — gerado como `'demo-' + Math.random().toString(36).substring(2, 10)` e armazenado apenas em memória JS (`STATE`), garantindo que cada visita comece uma conversa limpa
+- **Sticky-stack curtain** — efeito de seções empilhadas com `position: sticky` e `z-index` decrescente, sem `overflow: hidden` no pai (requisito crítico para o efeito funcionar)
+- **n8n como único backend** — as mensagens são enviadas via `POST` ao webhook público do n8n, que aciona o mesmo agente de IA do ambiente de produção com memória simplificada
+
 ---
 
 ## 🧠 O que é o ATLAS?
