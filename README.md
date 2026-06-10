@@ -13,6 +13,14 @@
 
 </div>
 
+## 🧠 O que é o ATLAS?
+
+O ATLAS é um sistema completo de gestão de chamados de TI com um diferencial: o usuário abre e acompanha chamados **diretamente pelo WhatsApp**, sem precisar acessar nenhum sistema. Um agente de IA coleta os dados, identifica o tipo do problema e registra o chamado automaticamente — enquanto os técnicos gerenciam tudo por um painel web moderno.
+
+> Desenvolvido do zero e **em uso real** na Secretaria de Infraestrutura do Estado do Ceará (SEINFRA).
+
+---
+
 ## 🎮 ATLAS Demo
 
 Como o sistema roda em ambiente institucional com credenciais reais, foi criada uma **versão demo** hospedada no GitHub Pages para que recrutadores e outros devs possam interagir com o agente sem precisar de acesso ao ambiente de produção.
@@ -33,20 +41,6 @@ Diferenças em relação ao ambiente de produção:
 | Sessão | Identificada pelo número de telefone | `sessionId` gerado aleatoriamente no browser |
 | Backend | API REST completa no Render | Apenas webhook n8n público |
 
-### Estrutura do repositório da demo
-
-```
-atlas-demo/
-├── index.html          # Landing page completa (SPA)
-├── style.css           # Estilos globais, paleta, animações
-├── main.js             # Lógica da demo: chat, sessão, estado
-└── assets/
-    ├── logoAtlas.png
-    ├── iaBackground.jpg
-    ├── tech-dashboard.jpg
-    └── 01.jpg – 04.jpg
-```
-
 ### Decisões técnicas da demo
 
 - **Sem framework** — HTML/CSS/JS vanilla puro, zero dependências, compatível com GitHub Pages
@@ -56,15 +50,8 @@ atlas-demo/
 
 ---
 
-## 🧠 O que é o ATLAS?
 
-O ATLAS é um sistema completo de gestão de chamados de TI com um diferencial: o usuário abre e acompanha chamados **diretamente pelo WhatsApp**, sem precisar acessar nenhum sistema. Um agente de IA coleta os dados, identifica o tipo do problema e registra o chamado automaticamente — enquanto os técnicos gerenciam tudo por um painel web moderno.
-
-> Desenvolvido do zero e **em uso real** na Secretaria de Infraestrutura do Estado do Ceará (SEINFRA).
-
----
-
-## ✨ Funcionalidades
+## ✨ Funcionalidades do ATLAS
 
 ### 📱 Canal WhatsApp (Usuário Final)
 - Abertura de chamados via conversa natural com o agente de IA (ATLAS)
@@ -80,45 +67,6 @@ O ATLAS é um sistema completo de gestão de chamados de TI com um diferencial: 
 - Inventário de equipamentos com ficha técnica, histórico e arquivos
 - Gestão de usuários com controle de acesso por nível (admin / técnico)
 - Arquivamento de chamados e equipamentos
-
----
-
-## 🏗️ Arquitetura
-
-```
-┌─────────────────────────────────────────────────────────┐
-│                     USUÁRIO FINAL                       │
-│                    (via WhatsApp)                       │
-└─────────────────────┬───────────────────────────────────┘
-                      │
-                      ▼
-┌─────────────────────────────────────────────────────────┐
-│              EVOLUTION API (WhatsApp Gateway)           │
-└─────────────────────┬───────────────────────────────────┘
-                      │  Webhook
-                      ▼
-┌─────────────────────────────────────────────────────────┐
-│                   n8n (Orquestração)                    │
-│  ┌──────────┐  ┌──────────┐  ┌──────────────────────┐  │
-│  │ OpenRouter│  │MemóriaPG │  │  Tools (API calls)   │  │
-│  │(Gemini 2.5│  │(Sessões) │  │  Abrir chamado       │  │
-│  │  Flash)  │  │          │  │  Buscar equipamento   │  │
-│  └──────────┘  └──────────┘  └──────────────────────┘  │
-└─────────────────────┬───────────────────────────────────┘
-                      │  REST API
-                      ▼
-┌─────────────────────────────────────────────────────────┐
-│              BACKEND (Node.js + Express)                │
-│              Knex.js + PostgreSQL                       │
-│              JWT Auth · Multer · Bcrypt                 │
-└─────────────────────┬───────────────────────────────────┘
-                      │
-                      ▼
-┌─────────────────────────────────────────────────────────┐
-│              FRONTEND (Vanilla HTML/CSS/JS)             │
-│              Tailwind CSS · SPA com hash routing        │
-└─────────────────────────────────────────────────────────┘
-```
 
 ---
 
