@@ -101,5 +101,5 @@ Desenvolvido por **Adriano Mesquita**
 ---
 
 <div align="center">
-<sub>Sistema em produção desde 2025 · SEINFRA — Secretaria de Infraestrutura do Estado do Ceará</sub>
+<sub>ATLAS e Sistema de Gestão em produção real · SEINFRA — Secretaria de Infraestrutura do Estado do Ceará</sub>
 </div>
